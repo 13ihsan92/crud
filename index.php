@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 </head>
 <body>
-<<?php 
+<<?php
 	include 'conf/koneksi.php';
 	$tampil=mysqli_query($con,"SELECT * FROM barang");
 
@@ -33,10 +33,10 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php  
+			<?php
 				$no=1;
 				while($r=mysqli_fetch_array($tampil)) {
-					echo 
+					echo
 						"<tr><td>$no</td>
 						<td>$r[kd_barang]</td>
 						<td>$r[nama]</td>";
@@ -44,7 +44,7 @@
 					$datakategori=mysqli_query($con,"SELECT * FROM Kategori WHERE id_kategori='$r[id_kategori]'");
 					$r2=mysqli_fetch_array($datakategori);
 
-					echo 
+					echo
 						"<td>$r2[nama_kategori]</td>
 						<td>$r[deskripsi]</td>
 						<td>$r[id_kategori]
